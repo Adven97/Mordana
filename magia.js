@@ -49,7 +49,7 @@ function setText() {
         "mam w dupie to jak sie kurwa wyrażam!", "zrób se sam! co rąk nie masz do roboty tylko czekasz na gotowe?",//30
 
         "gówno","co kurwa po polsku nie rozumiesz?","nie ważne, i tak nie zrozumiesz","chujów sto",
-        "Zajebe was kurwy!", "Chodzmy się najebać","Did you ever hear the tragedy of Darth Plagueis the Wise?"
+        "Zajebe was kurwy!", "Chodzmy się najebać","Did you ever hear the tragedy of Darth Plagueis the Wise?","hahaha, what a story Mark"
       ];
 
       var ii = Math.floor(Math.random() * replyList.length);
