@@ -151,6 +151,36 @@ function setText() {
       else if (mytxt.includes("kim") && (mytxt.includes("jestes") || mytxt.includes("jesteś")) ) {
         bottxt = "Mam na imię Mordana. Jestem najlepszym asystentem głosowym jaki kiedykolwiek powstał i powstanie";
       }
+      else if (mytxt.includes("dzień") || (mytxt.includes("dzien")) ) {
+        var d = new Date();
+        var today = d.getDate() + "-" + d.getMonth()+ "-" + d.getFullYear();
+        var dzienTygodnia;
+
+        switch(d.getDay()){
+          case 0:
+            dzienTygodnia="Niedziela";
+            break;
+          case 1:
+            dzienTygodnia="Poniedziałek";
+            break;
+          case 2:
+            dzienTygodnia="Wtorek";
+            break;
+          case 3:
+            dzienTygodnia="Środa";
+            break;
+          case 4:
+            dzienTygodnia="Czwartek";
+            break;
+          case 5:
+            dzienTygodnia="Piątek na Propsie";
+            break;
+          case 5:
+            dzienTygodnia="Sobota na dropsie";
+            break;
+        }
+        bottxt = "Dzisiaj jest "+dzienTygodnia +", "+today;
+      }
 
       else {
         if (ii == repet) {
@@ -160,8 +190,8 @@ function setText() {
         bottxt = replyList[ii];
       }
 
-    //  var mowionyTekst =bottxt.replaceAll('...', ',').replaceAll('ch', 'h');
-    //  responsiveVoice.speak(mowionyTekst,"Polish Female");///////////////////ttuu//////////////////////////
+      var mowionyTekst =bottxt.replaceAll('...', ',').replaceAll('ch', 'h');
+      responsiveVoice.speak(mowionyTekst,"Polish Female");///////////////////ttuu//////////////////////////
 
       setTimeout(function() {
 
