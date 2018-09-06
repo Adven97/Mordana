@@ -175,7 +175,7 @@ function setText() {
           case 5:
             dzienTygodnia="Piątek na Propsie";
             break;
-          case 5:
+          case 6:
             dzienTygodnia="Sobota na dropsie";
             break;
         }
@@ -184,7 +184,7 @@ function setText() {
           window.open('https://www.youtube.com/watch?v=yobNYQl3Zrw', '_blank');
         else if(dzienTygodnia =="Sobota na dropsie")
           window.open('https://www.youtube.com/watch?v=81RKpbYPzQM', '_blank');
-    
+
       }
 
       else {
