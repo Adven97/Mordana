@@ -80,7 +80,7 @@ function setText() {
         bottxt = "Znaleziono w Google: "+xd;
         window.open("https://www.google.pl/search?q="+xd, '_blank');
       }
-      else if (mytxt.includes("kim jest") || mytxt.includes("kim jest")) {
+      else if (mytxt.includes("kim jest ") || mytxt.includes("Kim jest ")) {
         let xd= mytxt.slice(9,mytxt.length);
         if(mytxt.includes("?")) xd= mytxt.slice(9,mytxt.length-1);
         bottxt = xd;
