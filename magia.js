@@ -180,6 +180,11 @@ function setText() {
             break;
         }
         bottxt = "Dzisiaj jest "+dzienTygodnia +", "+today;
+        if(dzienTygodnia =="Piątek na Propsie")
+          window.open('https://www.youtube.com/watch?v=yobNYQl3Zrw', '_blank');
+        else if(dzienTygodnia =="Sobota na dropsie")
+          window.open('https://www.youtube.com/watch?v=81RKpbYPzQM', '_blank');
+    
       }
 
       else {
