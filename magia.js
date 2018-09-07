@@ -116,7 +116,8 @@ function setText() {
         bottxt = losuj(kultura);
       }
       else if (mytxt.includes("co tam") || mytxt.includes("co słych") || mytxt.includes("jak tam")) {
-        bottxt = "Stara bida :(";
+        let cotam=["Stara bida :(","Zajebiście, a ty jak tam?","Chujowo","Jestem jebanym botem, jak myślisz?","W porządku."]
+        bottxt = losuj(cotam);
       }
       else if (mytxt.includes("dobrze")) {
         bottxt =replyList[5];
@@ -133,8 +134,8 @@ function setText() {
       else if (mytxt.includes("hbo")) {
         bottxt = "Na HBO warto obejrzeć serial: " + losuj(hbo);
       }
-      else if (mytxt.includes("ok") || mytxt.includes("git") || mytxt.includes("dzię") || mytxt.includes("thx")) {
-        let pozytywnaOdp =["No i zajebiście!","O to chodzi","cieszę się","bardzo proszę","nie ma za co"]
+      else if (mytxt.includes("ok") || mytxt.includes("git") || mytxt.includes("dzię") || mytxt.includes("thx") || mytxt.includes("fajnie") || mytxt.includes("ciesz")) {
+        let pozytywnaOdp =["No i zajebiście!","O to chodzi","cieszę się","bardzo proszę"]
         bottxt = losuj(pozytywnaOdp);
       }
       else if (mytxt.includes("tede") && mytxt.includes("kurw")) {
@@ -192,7 +193,7 @@ function setText() {
 
       }
       else if (mytxt.includes("sens") && (mytxt.includes("bez") || mytxt.includes("nie")) ){
-        bottxt = "Żysie jest bez sensu, taka prawda";
+        bottxt = "Życie jest bez sensu, taka prawda";
       }
 
       else { bottxt = replyList[ii] };
