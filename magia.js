@@ -75,6 +75,11 @@ function setText() {
         bottxt = "Znaleziono na YouTube: "+xd;
         window.open("https://www.youtube.com/results?search_query="+xd, '_blank');
       }
+      else if (mytxt.includes("puść") || mytxt.includes("pusc")) {
+        let xd= mytxt.slice(5,mytxt.length);
+        bottxt = "Znaleziono na YouTube: "+xd;
+        window.open("https://www.youtube.com/results?search_query="+xd, '_blank');
+      }
       else if (mytxt.includes("google:") || mytxt.includes("Google:")) {
         let xd= mytxt.slice(8,mytxt.length);
         bottxt = "Znaleziono w Google: "+xd;
