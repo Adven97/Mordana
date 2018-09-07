@@ -48,7 +48,6 @@ function setText() {
         "w polsce jest jak w lesie xD", "w życiu chodzi o to żeby pićko pić, co nie?", "co?",
         "mam w dupie to jak sie kurwa wyrażam!", "zrób se sam! co rąk nie masz do roboty tylko czekasz na gotowe?",//30
 
-
         "Zajebe was kurwy!", "Chodzmy się najebać","Did you ever hear the tragedy of Darth Plagueis the Wise?",
         "hahaha, what a story Mark","Hitler nie zrobił nic złego!"
       ];
@@ -115,7 +114,8 @@ function setText() {
         "To chuj ci w duupe staary!","sam spierdalaj","wal się"];
         bottxt = losuj(kultura);
       }
-      else if (mytxt.includes("co tam") || mytxt.includes("co słych") || mytxt.includes("jak tam")) {
+      else if (mytxt.includes("co tam") || mytxt.includes("co słych") || mytxt.includes("jak tam") ||mytxt.includes("co robisz"))
+      {
         let cotam=["Stara bida :(","Zajebiście, a ty jak tam?","Chujowo","Jestem jebanym botem, jak myślisz?","W porządku."]
         bottxt = losuj(cotam);
       }
@@ -129,9 +129,19 @@ function setText() {
         bottxt = "Najlepszy film jaki powstał to Scott Pilgrim vs. the World";
       }
       else if (mytxt.includes("netflix")) {
+        var netflix = ["Mad Men", "Skins", "Luke Cage", "Jessica Jones", "Mindhunter", "Orange is the New Black",
+          "Peep show", "Teen Titans Go!", "Ozark", "The Inbetweeners", "Gravity Falls", "Ultraviolet", "Master of None",
+          "Sense8", "Black Mirror", "That 70s show", "Ray Donovan", "Once Upon a Time", "Friends", "Masters of Sex", "Suits",
+           "Unbreakable Kimmy Schmidt", "Luther", "Bloodline", "Peaky Blinders", "Penny Dreadful", "House of Cards",
+          "13 reasons why XDD", "Narcos", "Breaking Bad", "Better call Saul", "Penn and Teller Fool us", "Friends",
+          "Cosmos", "iZombie", "Avatar", "Dexter", "Californication", "Series of Unfortunate Events", "Hannibal",
+          "Rick and Morty", "BoJack Horseman", "American Vandal", "Dom z papieru", "Stranger Things", "Dark", "Broadchurch"
+        ];
         bottxt = "Na Netflix warto obejrzeć serial: " + losuj(netflix);
       }
       else if (mytxt.includes("hbo")) {
+        var hbo = ["Westworld", "Ballers", "Newsroom", "Counterpart", "Enturage", "Trust", "Gomorra", "The Sopranos",
+                   "6 feet Under", "Wataha", "The Wire", "The Big Bang Theory", "Silicon Valley"];
         bottxt = "Na HBO warto obejrzeć serial: " + losuj(hbo);
       }
       else if (mytxt.includes("ok") || mytxt.includes("git") || mytxt.includes("dzię") || mytxt.includes("thx") || mytxt.includes("fajnie") || mytxt.includes("ciesz")) {
@@ -195,6 +205,10 @@ function setText() {
       else if (mytxt.includes("sens") && (mytxt.includes("bez") || mytxt.includes("nie")) ){
         bottxt = "Życie jest bez sensu, taka prawda";
       }
+      else if (mytxt.includes("boli")){
+        bottxt = "Co cie boli? Czy aż tak cie to boli? Że Rychu Peja ma szansę dziś uczciwie zarobić?";
+        window.open('https://www.youtube.com/watch?v=rwCLYyVVvNE&t=6s','_blank');
+      }
 
       else { bottxt = replyList[ii] };
 
@@ -215,7 +229,6 @@ function setText() {
           '</span></div></div>'));
           //speak(bottxt);
 
-
         var h2 = 40;
         var len2 = bottxt.length;
         if (len2 > maxLiter) {
@@ -230,7 +243,7 @@ function setText() {
           $('#box').css("overflow-y", "auto");
         }
         replied = true;
-      }, 750);/////////////////////////////////////////////////////////koniec setTimeout
+      }, 750);/////////////////////////////////////////////////////koniec setTimeout
 
     }
     counter++;
@@ -245,27 +258,15 @@ function setText() {
     box.scrollBy(0, 500);
   }, 760);
 
-} ////////////////////////////////////////end of function setText
+} ///////////////////////////////////////////////////////////////////////end of function setText
 
-var input = document.getElementById("inp");
+var input = document.getElementById("inp");///////////////////sent text with enter
 input.addEventListener("keyup", function(event) {
   event.preventDefault();
   if (event.keyCode === 13) {
     document.getElementById("btn").click();
   }
 });
-
-var netflix = ["Mad Men", "Skins", "Luke Cage", "Jessica Jones", "Mindhunter", "Orange is the New Black",
-  "Peep show", "Teen Titans Go!", "Ozark", "The Inbetweeners", "Gravity Falls", "Ultraviolet", "Master of None",
-  "Sense8", "Black Mirror", "That 70s show", "Ray Donovan", "Once Upon a Time", "Friends", "Masters of Sex", "Suits",
-   "Unbreakable Kimmy Schmidt", "Luther", "Bloodline", "Peaky Blinders", "Penny Dreadful", "House of Cards",
-  "13 reasons why XDD", "Narcos", "Breaking Bad", "Better call Saul", "Penn and Teller Fool us", "Friends",
-  "Cosmos", "iZombie", "Avatar", "Dexter", "Californication", "Series of Unfortunate Events", "Hannibal",
-  "Rick and Morty", "BoJack Horseman", "American Vandal", "Dom z papieru", "Stranger Things", "Dark", "Broadchurch"
-];
-
-var hbo = ["Westworld", "Ballers", "Newsroom", "Counterpart", "Enturage", "Trust", "Gomorra", "The Sopranos",
-           "6 feet Under", "Wataha", "The Wire", "The Big Bang Theory", "Silicon Valley"];
 
 function losuj(arg) {
   var i = Math.floor(Math.random() * arg.length);
