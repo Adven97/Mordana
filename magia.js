@@ -50,7 +50,7 @@ function setText() {
 
         "gówno","co kurwa po polsku nie rozumiesz?","nie ważne, i tak nie zrozumiesz","chujów sto",
         "Zajebe was kurwy!", "Chodzmy się najebać","Did you ever hear the tragedy of Darth Plagueis the Wise?",
-        "hahaha, what a story Mark","Hitler nie zrobił nic złego!S"
+        "hahaha, what a story Mark","Hitler nie zrobił nic złego!"
       ];
 
       var ii = Math.floor(Math.random() * replyList.length);
@@ -110,7 +110,7 @@ function setText() {
         bottxt =
           "Sąd, konfidenci, psy to jedna banda. Przeciwko kurestwu JP propaganda. Bez skrupułów, na lewo albo za zwykłe głupoty, niszczą ludziom życie, z ich dzieci robią sieroty. I Bez wyroków i policyjnej agresji, oby wszyscy dobrzy ludzie tak przez życie przeszli. Oby na ciebie nigdy nie donieśli. JP człowieku, weź ten przekaz dalej prześlij!";
       }
-      else if (mytxt.includes("pierdal") || mytxt.includes("pierdol") || mytxt.includes("kurw") || mytxt.includes("chuj") || mytxt.includes("jeb")) {
+      else if (mytxt.includes("pierdal") || mytxt.includes("pierdol") || mytxt.includes("kurw") || mytxt.includes("chuj") || mytxt.includes("jeb") || mytxt.includes("suk")) {
         bottxt = "Kultury troche w tej pierdolonej milicji !!!";
       }
       else if (mytxt.includes("co tam") || mytxt.includes("co słych") || mytxt.includes("jak tam")) {
@@ -152,7 +152,7 @@ function setText() {
       else if (mytxt.includes("kim") && (mytxt.includes("jestes") || mytxt.includes("jesteś")) ) {
         bottxt = "Mam na imię Mordana. Jestem najlepszym asystentem głosowym jaki kiedykolwiek powstał i powstanie";
       }
-      else if (mytxt.includes("dzień") || (mytxt.includes("dzien")) ) {
+      else if (mytxt.includes("dzień") || mytxt.includes("dzien") || mytxt.includes("data")) {
         var d = new Date();
         var today = d.getDate() + "-" + d.getMonth()+ "-" + d.getFullYear();
         var dzienTygodnia;
@@ -188,14 +188,8 @@ function setText() {
 
       }
 
-      else {
-        if (ii == repet) {
-          ii = ii + 1;
-        }
-        repet = ii;
-        bottxt = replyList[ii];
-      }
-
+      else { bottxt = replyList[ii] };
+      
       var mowionyTekst =bottxt.replaceAll('...', ',').replaceAll('ch', 'h');
       responsiveVoice.speak(mowionyTekst,"Polish Female");///////////////////ttuu//////////////////////////
 
@@ -255,7 +249,8 @@ input.addEventListener("keyup", function(event) {
 
 var netflix = ["Mad Men", "Skins", "Luke Cage", "Jessica Jones", "Mindhunter", "Orange is the New Black",
   "Peep show", "Teen Titans Go!", "Ozark", "The Inbetweeners", "Gravity Falls", "Ultraviolet", "Master of None",
-  "Sense8", "Black Mirror", "That 70s show", "Ray Donovan", "Once Upon a Time", "Friends", "Masters of Sex", "Suits", "Unbreakable Kimmy Schmidt", "Luther", "Bloodline", "Peaky Blinders", "Penny Dreadful", "House of Cards",
+  "Sense8", "Black Mirror", "That 70s show", "Ray Donovan", "Once Upon a Time", "Friends", "Masters of Sex", "Suits",
+   "Unbreakable Kimmy Schmidt", "Luther", "Bloodline", "Peaky Blinders", "Penny Dreadful", "House of Cards",
   "13 reasons why XDD", "Narcos", "Breaking Bad", "Better call Saul", "Penn and Teller Fool us", "Friends",
   "Cosmos", "iZombie", "Avatar", "Dexter", "Californication", "Series of Unfortunate Events", "Hannibal",
   "Rick and Morty", "BoJack Horseman", "American Vandal", "Dom z papieru", "Stranger Things", "Dark", "Broadchurch"
