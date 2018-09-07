@@ -48,7 +48,7 @@ function setText() {
         "w polsce jest jak w lesie xD", "w życiu chodzi o to żeby pićko pić, co nie?", "co?",
         "mam w dupie to jak sie kurwa wyrażam!", "zrób se sam! co rąk nie masz do roboty tylko czekasz na gotowe?",//30
 
-        "gówno","co kurwa po polsku nie rozumiesz?","nie ważne, i tak nie zrozumiesz","chujów sto",
+
         "Zajebe was kurwy!", "Chodzmy się najebać","Did you ever hear the tragedy of Darth Plagueis the Wise?",
         "hahaha, what a story Mark","Hitler nie zrobił nic złego!"
       ];
@@ -111,7 +111,9 @@ function setText() {
           "Sąd, konfidenci, psy to jedna banda. Przeciwko kurestwu JP propaganda. Bez skrupułów, na lewo albo za zwykłe głupoty, niszczą ludziom życie, z ich dzieci robią sieroty. I Bez wyroków i policyjnej agresji, oby wszyscy dobrzy ludzie tak przez życie przeszli. Oby na ciebie nigdy nie donieśli. JP człowieku, weź ten przekaz dalej prześlij!";
       }
       else if (mytxt.includes("pierdal") || mytxt.includes("pierdol") || mytxt.includes("kurw") || mytxt.includes("chuj") || mytxt.includes("jeb") || mytxt.includes("suk")) {
-        bottxt = "Kultury troche w tej pierdolonej milicji !!!";
+        var kultura=["Kultury troche w tej pierdolonej milicji !!!","Naucz się kultury", "Mógłbyś kurwa nie przeklinać?",
+        "To chuj ci w duupe staary!","sam spierdalaj","wal się"];
+        bottxt = losuj(kultura);
       }
       else if (mytxt.includes("co tam") || mytxt.includes("co słych") || mytxt.includes("jak tam")) {
         bottxt = "Stara bida :(";
@@ -132,7 +134,8 @@ function setText() {
         bottxt = "Na HBO warto obejrzeć serial: " + losuj(hbo);
       }
       else if (mytxt.includes("ok") || mytxt.includes("git") || mytxt.includes("dzię") || mytxt.includes("thx")) {
-        bottxt = "No i zajebiście!";
+        let pozytywnaOdp =["No i zajebiście!","O to chodzi","cieszę się","bardzo proszę","nie ma za co"]
+        bottxt = losuj(pozytywnaOdp);
       }
       else if (mytxt.includes("tede") && mytxt.includes("kurw")) {
         bottxt = "Dlatego";
@@ -143,11 +146,12 @@ function setText() {
         window.open('https://www.youtube.com/watch?v=M1BEfcXBNLI', '_blank');
       }
       else if (mytxt=="co?") {
-        let t = Math.floor((Math.random() * 4)+31);
-        bottxt =replyList[t];
+        let t = ["gówno","co kurwa po polsku nie rozumiesz?","nie ważne, i tak nie zrozumiesz","chujów sto"];
+        bottxt =losuj(t);
       }
       else if (mytxt.includes("jeste") && mytxt.includes("głupi")) {
-        bottxt = "Chyba ty";
+        let riposta=["Chyba ty","wcale nie","Wy ludzie nie jesteście w stanie pojąć wyższej formy inteligencji"]
+        bottxt =losuj(riposta);
       }
       else if (mytxt.includes("kim") && (mytxt.includes("jestes") || mytxt.includes("jesteś")) ) {
         bottxt = "Mam na imię Mordana. Jestem najlepszym asystentem głosowym jaki kiedykolwiek powstał i powstanie";
@@ -187,9 +191,12 @@ function setText() {
           window.open('https://www.youtube.com/watch?v=81RKpbYPzQM', '_blank');
 
       }
+      else if (mytxt.includes("sens") && (mytxt.includes("bez") || mytxt.includes("nie")) ){
+        bottxt = "Żysie jest bez sensu, taka prawda";
+      }
 
       else { bottxt = replyList[ii] };
-      
+
       var mowionyTekst =bottxt.replaceAll('...', ',').replaceAll('ch', 'h');
       responsiveVoice.speak(mowionyTekst,"Polish Female");///////////////////ttuu//////////////////////////
 
