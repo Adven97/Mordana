@@ -98,13 +98,11 @@ function setText() {
         window.open("https://www.google.pl/search?q=pogoda", '_blank');
       }
 
-
       if(tragedia==true){
         bottxt =
         "I thought not. It's not a story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life… He had such a knoledge of the dark side, he could even keep the ones he cared about from dying. The dark side of the Force is a pathway to many abilities some consider to be unnatural. He became so powerful… the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.";
         tragedia=false;
       }
-
 
       else if ((mytxt.includes("21") && mytxt.includes("37")) || mytxt.includes("barka") || mytxt.includes("papaj") ||
         mytxt.includes("bareczka") || mytxt.includes("papie")) {
@@ -121,9 +119,9 @@ function setText() {
           bottxt = "Jest godzina: " + time;
         }
       }
-      else if (mytxt.includes("sens") && (mytxt.includes("życia") || mytxt.includes("zycia"))) {
+      else if (mytxt.includes("sens")|| mytxt.includes("czym") && (mytxt.includes("życi") || mytxt.includes("zyci"))) {
         let sens=["Sąd, konfidenci, psy to jedna banda. Przeciwko kurestwu JP propaganda. Bez skrupułów, na lewo albo za zwykłe głupoty, niszczą ludziom życie, z ich dzieci robią sieroty. I Bez wyroków i policyjnej agresji, oby wszyscy dobrzy ludzie tak przez życie przeszli. Oby na ciebie nigdy nie donieśli. JP człowieku, weź ten przekaz dalej prześlij!",
-        "W życiu chodzi o to żeby pićko pić, co nie?","What is life?"]
+        "W życiu chodzi o to żeby pićko pić, co nie?","What is life?","Jeżeli f jest funkcją parzystą i całkowalną to Bóg mi świadkiem, że całka na przedziale -a do a z f(x)dx jest rowna zero "]
         let odp=losuj(sens);
         bottxt =odp;
         if(odp=="What is life?") window.open('https://www.youtube.com/watch?v=fiH9edd25Bc');
@@ -243,6 +241,9 @@ function setText() {
       else if (mytxt.includes("what is love?") || mytxt.includes("milosc") ||mytxt.includes("miłość")){
         bottxt = "Babe don't hurt me, Don't hurt me. Nomore";
         window.open('https://www.youtube.com/watch?v=HEXWRTEbj1I');
+      }
+      else if (mytxt.includes("wolnosc") || mytxt.includes("wolność")) {
+        bottxt = "wolnosc jest wtedy kiedy cala noc grasz w gierki np w peja, i zamawiasz sobie pitce ofc rano i padasz i tracisz wszystko, ale chuj o to biega. potem rano idziesz do żabki i kupujesz sobie platki gold flakes i wpierdalasz cala paczke na sucho, i tszy pifka ktore wypijasz na hejnal, co wlasnie zrobie sobie jutro";
       }
 
       else { bottxt = replyList[ii] };
