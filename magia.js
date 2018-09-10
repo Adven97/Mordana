@@ -2,6 +2,7 @@ var replied = true;
 var counter = 1;
 const powiekszenie = 8;
 const maxLiter = 45;
+const hplus=18;
 var tragedia=false;
 
 function setText() {
@@ -26,10 +27,9 @@ function setText() {
     var len = mytxt.length;
     if (len > maxLiter) {
       for (var i = 0; i < len; i++) {
-        //  temp=i;
         if (i % maxLiter == 0) {
           $('#box').append($('<br />'));
-          h += 18;
+          h += hplus;
           $('.u' + counter).css("height", h);
         }
       }
@@ -38,7 +38,7 @@ function setText() {
     if (!replied) {
       var replyList = ["Cześć", "Hello there", "Witam", "Hejka!",
 
-        "No hejka, co tam się z Tobą dzieje? Skąd to zwątpienie? Dlaczego chcesz teraz się poddać, tylko dlatego, że raz czy drugi Ci nie wyszło? To nie jest żaden powód. Musisz iść i walczyć. Osiągniesz cel. Prędzej czy później go osiągniesz, ale musisz iść do przodu, przeć, walczyć o swoje. Nie ważne, że wszystko dookoła jest przeciwko Tobie. Najważniejsze jest to, że masz tutaj wole zwycięstwa. To się liczy. Każdy może osiągnąć cel, nie ważne czy taki czy taki, ale trzeba iść i walczyć. To teraz masz trzy sekundy żeby się otrąsnąć, powiedzieć sobie: dobra basta!, pięścią w stół, idę to przodu i osiągam swój cel. Pozdro.",
+        "No hejka, co tam się z Tobą dzieje? Skąd to zwątpienie? Dlaczego chcesz teraz się poddać, tylko dlatego, że raz czy drugi Ci nie wyszło? To nie jest żaden powód. Musisz iść i walczyć. Osiągniesz cel. Prędzej czy później go osiągniesz, ale musisz iść do przodu, przeć, walczyć o swoje. Nie ważne, że wszystko dookoła jest przeciwko Tobie. Najważniejsze jest to, że masz tutaj wole zwycięstwa. To się liczy. Każdy może osiągnąć cel, nie ważne czy taki czy taki, ale trzeba iść i walczyć. To teraz masz trzy sekundy żeby się otrząsnąć, powiedzieć sobie: dobra basta!, pięścią w stół, idę to przodu i osiągam swój cel. Pozdro.",
 
         "Moim zdaniem to nie ma tak, że dobrze albo że nie dobrze. Gdybym miał powiedzieć, co cenię w życiu najbardziej, powiedziałbym, że ludzi. Ekhm... Ludzi, którzy podali mi pomocną dłoń, kiedy sobie nie radziłem, kiedy byłem sam. I co ciekawe, to właśnie przypadkowe spotkania wpływają na nasze życie. Chodzi o to, że kiedy wyznaje się pewne wartości, nawet pozornie uniwersalne, bywa, że nie znajduje się zrozumienia, które by tak rzec, które pomaga się nam rozwijać. Ja miałem szczęście, by tak rzec, ponieważ je znalazłem. I dziękuję życiu. Dziękuję mu, życie to śpiew, życie to taniec, życie to miłość. Wielu ludzi pyta mnie o to samo, ale jak ty to robisz?, skąd czerpiesz tę radość? A ja odpowiadam, że to proste, to umiłowanie życia, to właśnie ono sprawia, że dzisiaj na przykład buduję maszyny, a jutro... kto wie, dlaczego by nie, oddam się pracy społecznej i będę ot, choćby sadzić... znaczy... marchew.",
 
@@ -46,12 +46,11 @@ function setText() {
 
         "aha","fajnie","cieszę się","a co mnie to kurwa obchodzi",/////10
         "ok", "Nie rozumiem", "Jeszcze jak!", "nie ma takiego dowodu", "Adolf Hitler", "xD", "Zajebie was kurwy!",
-        "XDDD", "hahaha", "General Kenobi!", "co tam?", "co robisz?", "mam to w dupie", "Pierdol się", "nic",
+        "XDDD", "hahaha", "General Kenobi!", "Co tam?", "Co robisz?", "mam to w dupie", "Pierdol się", "nic",
         "w polsce jest jak w lesie xD", "w życiu chodzi o to żeby pićko pić, co nie?", "co?",
-        "mam w dupie to jak sie kurwa wyrażam!", "zrób se sam! co rąk nie masz do roboty tylko czekasz na gotowe?",//30
+        "mam w dupie to jak sie kurwa wyrażam!","Co słychać","Jak tam?","Tede czy Peja?","ŁKS czy Widzew?",
 
-        "Zajebe was kurwy!", "Chodzmy się najebać",
-        "hahaha, what a story Mark","Hitler nie zrobił nic złego!"
+        "Zajebe was kurwy!", "Chodzmy się najebać","Hitler nie zrobił nic złego!"
       ];
 
       var ii = Math.floor(Math.random() * replyList.length);
@@ -67,7 +66,13 @@ function setText() {
       }
       var bottxt;
 
-      if (mytxt.includes("youtube:") || mytxt.includes("Youtube:")) {
+      if(tragedia==true){
+        bottxt =
+        "I thought not. It's not a story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life… He had such a knoledge of the dark side, he could even keep the ones he cared about from dying. The dark side of the Force is a pathway to many abilities some consider to be unnatural. He became so powerful… the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.";
+        tragedia=false;
+      }
+
+      else if (mytxt.includes("youtube:") || mytxt.includes("Youtube:")) {
         let xd= mytxt.slice(9,mytxt.length);
         bottxt = "Znaleziono na YouTube: "+xd;
         window.open("https://www.youtube.com/results?search_query="+xd, '_blank');
@@ -82,7 +87,7 @@ function setText() {
         bottxt = "Znaleziono na YouTube: "+xd;
         window.open("https://www.youtube.com/results?search_query="+xd, '_blank');
       }
-      else if (mytxt.includes("google:") || mytxt.includes("Google:")) {
+      else if (mytxt.includes("google:") || mytxt.includes("Google:") || mytxt.includes("znajd")|| mytxt.includes("Znajd")) {
         let xd= mytxt.slice(8,mytxt.length);
         bottxt = "Znaleziono w Google: "+xd;
         window.open("https://www.google.pl/search?q="+xd, '_blank');
@@ -96,12 +101,6 @@ function setText() {
       else if (mytxt.includes("pogoda")) {
         bottxt = "Pogoda wg. Google";
         window.open("https://www.google.pl/search?q=pogoda", '_blank');
-      }
-
-      if(tragedia==true){
-        bottxt =
-        "I thought not. It's not a story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life… He had such a knoledge of the dark side, he could even keep the ones he cared about from dying. The dark side of the Force is a pathway to many abilities some consider to be unnatural. He became so powerful… the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.";
-        tragedia=false;
       }
 
       else if ((mytxt.includes("21") && mytxt.includes("37")) || mytxt.includes("barka") || mytxt.includes("papaj") ||
@@ -119,13 +118,14 @@ function setText() {
           bottxt = "Jest godzina: " + time;
         }
       }
+      else if (mytxt.includes("sens") && (mytxt.includes("bez") || mytxt.includes("nie")) ){
+        bottxt = "Życie jest bez sensu, taka prawda";
+      }
       else if (mytxt.includes("sens")|| mytxt.includes("czym") && (mytxt.includes("życi") || mytxt.includes("zyci"))) {
         let sens=["Sąd, konfidenci, psy to jedna banda. Przeciwko kurestwu JP propaganda. Bez skrupułów, na lewo albo za zwykłe głupoty, niszczą ludziom życie, z ich dzieci robią sieroty. I Bez wyroków i policyjnej agresji, oby wszyscy dobrzy ludzie tak przez życie przeszli. Oby na ciebie nigdy nie donieśli. JP człowieku, weź ten przekaz dalej prześlij!",
-        "W życiu chodzi o to żeby pićko pić, co nie?","What is life?","Jeżeli f jest funkcją parzystą i całkowalną to Bóg mi świadkiem, że całka na przedziale -a do a z f(x)dx jest rowna zero "]
+        "W życiu chodzi o to żeby pićko pić, co nie?","Jeżeli f jest funkcją parzystą i całkowalną to Bóg mi świadkiem, że całka na przedziale -a do a z f(x)dx jest rowna zero "]
         let odp=losuj(sens);
         bottxt =odp;
-        if(odp=="What is life?") window.open('https://www.youtube.com/watch?v=fiH9edd25Bc');
-
       }
       else if (mytxt.includes("pierdal") || mytxt.includes("pierdol") || mytxt.includes("kurw") || mytxt.includes("chuj") || mytxt.includes("jeb") || mytxt.includes("suk")) {
         var kultura=["Kultury troche w tej pierdolonej milicji !!!","Naucz się kultury", "Mógłbyś kurwa nie przeklinać?",
@@ -148,7 +148,7 @@ function setText() {
       }
       else if (mytxt.includes("netflix")) {
         var netflix = ["Mad Men", "Skins", "Luke Cage", "Jessica Jones", "Mindhunter", "Orange is the New Black",
-          "Peep show", "Teen Titans Go!", "Ozark", "The Inbetweeners", "Gravity Falls", "Ultraviolet", "Master of None",
+          "Peep show", "Teen Titans Go!", "Ozark", "The Inbetweeners", "Gravity Falls", "Master of None",
           "Sense8", "Black Mirror", "That 70s show", "Ray Donovan", "Once Upon a Time", "Friends", "Masters of Sex", "Suits",
            "Unbreakable Kimmy Schmidt", "Luther", "Bloodline", "Peaky Blinders", "Penny Dreadful", "House of Cards",
           "13 reasons why XDD", "Narcos", "Breaking Bad", "Better call Saul", "Penn and Teller Fool us", "Friends",
@@ -166,20 +166,24 @@ function setText() {
         let pozytywnaOdp =["No i zajebiście!","O to chodzi","cieszę się","bardzo proszę"]
         bottxt = losuj(pozytywnaOdp);
       }
-      else if (mytxt.includes("tede") && mytxt.includes("kurw")) {
-        bottxt = "Dlatego";
+      else if (mytxt.includes("peja") || mytxt.includes("Peja")) {
+        bottxt = "Rychu Peja?";
         window.open('https://www.youtube.com/watch?v=78n8_u9CixA', '_blank');
+      }
+      else if (mytxt.includes("tede") || mytxt.includes("Tede")) {
+        bottxt = "Chyba Robert Makłowicz";
+        window.open('https://www.youtube.com/watch?v=fDGX9Hasimk');
       }
       else if (mytxt.includes("aezakmi")) {
         bottxt = "Wpisałem na brońki i żyćko, wpisałem na nieśmiertelność. Na policje nie wpisywałem bo chce żeby gonił mnie ktoś";
         window.open('https://www.youtube.com/watch?v=M1BEfcXBNLI', '_blank');
       }
       else if (mytxt=="co?") {
-        let t = ["gówno","co kurwa po polsku nie rozumiesz?","nie ważne, i tak nie zrozumiesz","chujów sto"];
+        let t = ["gówno","co kurwa po polsku nie rozumiesz?","nie ważne, i tak nie zrozumiesz","chujów sto","co co?"];
         bottxt =losuj(t);
       }
       else if (mytxt.includes("jeste") && mytxt.includes("głupi")) {
-        let riposta=["Chyba ty","wcale nie","Wy ludzie nie jesteście w stanie pojąć wyższej formy inteligencji"]
+        let riposta=["Chyba ty","wcale nie","Wy ludzie nie jesteście w stanie pojąć wyższej formy inteligencji","Pierdol się"]
         bottxt =losuj(riposta);
       }
       else if (mytxt.includes("kim") && (mytxt.includes("jestes") || mytxt.includes("jesteś")) ) {
@@ -220,9 +224,6 @@ function setText() {
           window.open('https://www.youtube.com/watch?v=81RKpbYPzQM', '_blank');
 
       }
-      else if (mytxt.includes("sens") && (mytxt.includes("bez") || mytxt.includes("nie")) ){
-        bottxt = "Życie jest bez sensu, taka prawda";
-      }
       else if (mytxt.includes("boli")){
         bottxt = "Co cie boli? Czy aż tak cie to boli? Że Rychu Peja ma szansę dziś uczciwie zarobić?";
         window.open('https://www.youtube.com/watch?v=rwCLYyVVvNE&t=6s','_blank');
@@ -250,7 +251,7 @@ function setText() {
 
       var mowionyTekst =bottxt.replaceAll('...', ',').replaceAll('ch', 'h');
       if(mowionyTekst.includes("the") ||mowionyTekst.includes("Babe")) responsiveVoice.speak(mowionyTekst,"UK English Male");
-      else  responsiveVoice.speak(mowionyTekst,"Polish Female");///////////////////ttuu//////////////////////////
+      else  responsiveVoice.speak(mowionyTekst,"Polish Female");
 
       setTimeout(function() {
 
@@ -271,7 +272,7 @@ function setText() {
         if (len2 > maxLiter) {
           for (var j = 0; j < len2; j++) {
             if (j % maxLiter == 0) {
-              h2 += 18;
+              h2 += hplus;
               $('.b' + counter).css("height", h2);
             }
           }
