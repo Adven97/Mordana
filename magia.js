@@ -5,6 +5,8 @@ const maxLiter = 45;
 const hplus=18;
 var tragedia=false;
 
+var textToLearn=["temp"];
+
 function setText() {
 
   var repet = 69;
@@ -49,7 +51,6 @@ function setText() {
         "XDDD", "hahaha", "General Kenobi!", "Co tam?", "Co robisz?", "mam to w dupie", "Pierdol się", "nic",
         "w polsce jest jak w lesie xD", "w życiu chodzi o to żeby pićko pić, co nie?", "co?",
         "mam w dupie to jak sie kurwa wyrażam!","Co słychać","Jak tam?","Tede czy Peja?","ŁKS czy Widzew?",
-
         "Zajebe was kurwy!", "Chodzmy się najebać","Hitler nie zrobił nic złego!"
       ];
 
@@ -134,7 +135,7 @@ function setText() {
       }
       else if (mytxt.includes("co tam") || mytxt.includes("co słych") || mytxt.includes("jak tam") ||mytxt.includes("co robisz"))
       {
-        let cotam=["Stara bida :(","Zajebiście, a ty jak tam?","Chujowo","Jestem jebanym botem, jak myślisz?","W porządku."]
+        let cotam=["Stara bida :(","Zajebiście, a ty jak tam?","Chujowo","Jestem jebanym botem, jak myślisz?","W porządku.","nuuda, a u ciebie?","Gram w szachy z Siri"]
         bottxt = losuj(cotam);
       }
       else if (mytxt.includes("dobrze")) {
@@ -173,6 +174,14 @@ function setText() {
       else if (mytxt.includes("tede") || mytxt.includes("Tede")) {
         bottxt = "Chyba Robert Makłowicz";
         window.open('https://www.youtube.com/watch?v=fDGX9Hasimk');
+      }
+      else if (mytxt=="nie") {
+        bottxt = "a właśnie, że tak";
+        window.open('https://www.youtube.com/watch?v=78n8_u9CixA', '_blank');
+      }
+      else if (mytxt=="tak") {
+        bottxt = "otóż nie";
+        window.open('https://www.youtube.com/watch?v=78n8_u9CixA', '_blank');
       }
       else if (mytxt.includes("aezakmi")) {
         bottxt = "Wpisałem na brońki i żyćko, wpisałem na nieśmiertelność. Na policje nie wpisywałem bo chce żeby gonił mnie ktoś";
@@ -249,6 +258,7 @@ function setText() {
 
       else { bottxt = replyList[ii] };
 
+
       var mowionyTekst =bottxt.replaceAll('...', ',').replaceAll('ch', 'h');
       if(mowionyTekst.includes("the") ||mowionyTekst.includes("Babe")) responsiveVoice.speak(mowionyTekst,"UK English Male");
       else  responsiveVoice.speak(mowionyTekst,"Polish Female");
@@ -295,6 +305,9 @@ function setText() {
   setTimeout(function() {
     box.scrollBy(0, 500);
   }, 760);
+
+
+textToLearn.push(mytxt);
 
 } ///////////////////////////////////////////////////////////////////////end of function setText
 
